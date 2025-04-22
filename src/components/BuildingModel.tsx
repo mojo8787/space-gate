@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from "react";
+import { Building } from "lucide-react";
 
 const BuildingModel: React.FC = () => {
   const [selectedSystem, setSelectedSystem] = useState<string>("hvac");

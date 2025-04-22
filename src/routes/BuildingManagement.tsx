@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Building, Bolt, Lock, Tool, Users } from "lucide-react";
+import { Building, Bolt, Lock, Wrench, Users } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BuildingModel from "../components/BuildingModel";
@@ -38,7 +38,7 @@ const BuildingManagement: React.FC = () => {
                 الأمن الفيزيائي
               </TabsTrigger>
               <TabsTrigger value="maintenance" className="data-[state=active]:bg-highlight-pink data-[state=active]:text-space-darker">
-                <Tool className="ml-2" />
+                <Wrench className="ml-2" />
                 الصيانة التنبؤية
               </TabsTrigger>
               <TabsTrigger value="experience" className="data-[state=active]:bg-white data-[state=active]:text-space-darker">
