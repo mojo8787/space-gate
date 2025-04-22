@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import SpaceScene from './SpaceScene';
-
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current) return;
@@ -16,7 +14,6 @@ const Hero: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return <div className="relative min-h-screen overflow-hidden">
       {/* Space scene background */}
       <SpaceScene className="absolute inset-0 z-0" />
@@ -27,7 +24,7 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div ref={heroRef} className="relative z-20 container mx-auto px-4 pt-40 pb-20 flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl font-cairo text-center font-bold mb-6">
-          <span className="block">إبداع عراقي… لإدارة المباني الذكية</span>
+          <span className="block">نحو فضاءٍ رقميٍّ آمن...</span>
           <span className="block mt-2 bg-gradient-to-r from-highlight-turquoise to-highlight-pink text-transparent bg-clip-text">
             من قلب بغداد
           </span>
@@ -51,5 +48,4 @@ const Hero: React.FC = () => {
       </div>
     </div>;
 };
-
 export default Hero;
