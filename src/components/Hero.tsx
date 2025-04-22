@@ -1,26 +1,20 @@
-
 import React, { useRef, useEffect } from 'react';
 import SpaceScene from './SpaceScene';
-
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     const handleScroll = () => {
       if (!heroRef.current) return;
       const scrollPosition = window.scrollY;
       const heroElement = heroRef.current;
       const translateY = scrollPosition * 0.4; // Parallax effect
-      
+
       heroElement.style.transform = `translateY(${translateY}px)`;
     };
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  return (
-    <div className="relative min-h-screen overflow-hidden">
+  return <div className="relative min-h-screen overflow-hidden">
       {/* Space scene background */}
       <SpaceScene className="absolute inset-0 z-0" />
       
@@ -28,10 +22,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-space-darker/50 via-transparent to-space-dark z-10"></div>
       
       {/* Content */}
-      <div 
-        ref={heroRef}
-        className="relative z-20 container mx-auto px-4 pt-40 pb-20 flex flex-col items-center"
-      >
+      <div ref={heroRef} className="relative z-20 container mx-auto px-4 pt-40 pb-20 flex flex-col items-center">
         <h1 className="text-5xl md:text-7xl font-cairo text-center font-bold mb-6">
           <span className="block">نحو فضاءٍ رقميٍّ آمن...</span>
           <span className="block mt-2 bg-gradient-to-r from-highlight-turquoise to-highlight-pink text-transparent bg-clip-text">
@@ -55,8 +46,6 @@ const Hero: React.FC = () => {
           <span className="mt-4 text-sm text-white/60">اسحب للاستكشاف</span>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
