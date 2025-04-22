@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import IoTSolutions from "./routes/IoTSolutions";
 import InfoSecurity from "./routes/InfoSecurity";
+import BuildingManagement from "./routes/BuildingManagement";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +21,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/iot-solutions" element={<IoTSolutions />} />
           <Route path="/info-security" element={<InfoSecurity />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/building-management" element={<BuildingManagement />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

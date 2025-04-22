@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Shield, Menu, X, Satellite, Lock, Database, Globe, Layers, Users, BookOpen } from "lucide-react";
+import { Shield, Menu, X, Satellite, Lock, Database, Globe, Layers, Users, BookOpen, Building } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,6 +25,7 @@ const Navbar = () => {
     { name: "الرئيسية", path: "/", icon: <Globe className="ml-1" size={18} /> },
     { name: "حلول IoT", path: "/iot-solutions", icon: <Satellite className="ml-1" size={18} /> },
     { name: "أمن المعلومات", path: "/info-security", icon: <Shield className="ml-1" size={18} /> },
+    { name: "إدارة المباني", path: "/building-management", icon: <Building className="ml-1" size={18} /> },
     { name: "نظام إدارة المؤسسة", path: "/ems", icon: <Database className="ml-1" size={18} /> },
     { name: "دراسات حالة", path: "/case-studies", icon: <BookOpen className="ml-1" size={18} /> },
     { name: "مختبر الابتكار", path: "/innovation-lab", icon: <Layers className="ml-1" size={18} /> },
