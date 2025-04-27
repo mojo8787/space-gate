@@ -48,16 +48,19 @@ const Contact: React.FC = () => {
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto">
           <div className="flex flex-col items-center justify-center mb-12 animate-fade-in">
-            <div className="w-32 h-32 mb-6 relative">
-              <div className="absolute inset-0 bg-highlight-turquoise/20 rounded-full animate-pulse"></div>
+            <div className="w-40 h-40 mb-6 relative group">
+              <div className="absolute inset-0 bg-highlight-turquoise/20 rounded-full animate-pulse group-hover:animate-none transition-all duration-300"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <Building className="w-16 h-16 text-highlight-turquoise animate-float" />
+                <Building 
+                  className="w-24 h-24 text-highlight-turquoise transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" 
+                  strokeWidth={1.5} 
+                />
               </div>
             </div>
-            <h2 className="text-2xl font-cairo font-bold text-highlight-turquoise mb-2">
+            <h2 className="text-3xl font-cairo font-bold text-highlight-turquoise mb-2 tracking-wider">
               Space Gate
             </h2>
-            <div className="h-0.5 w-24 bg-gradient-to-r from-highlight-turquoise/0 via-highlight-turquoise to-highlight-turquoise/0"></div>
+            <div className="h-0.5 w-32 bg-gradient-to-r from-highlight-turquoise/0 via-highlight-turquoise to-highlight-turquoise/0 animate-pulse"></div>
           </div>
 
           <div className="text-center mb-10">
