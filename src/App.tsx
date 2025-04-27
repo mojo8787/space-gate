@@ -10,6 +10,7 @@ import IoTSolutions from "./routes/IoTSolutions";
 import InfoSecurity from "./routes/InfoSecurity";
 import BuildingManagement from "./routes/BuildingManagement";
 import Partners from "./pages/Partners";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/info-security" element={<InfoSecurity />} />
           <Route path="/building-management" element={<BuildingManagement />} />
           <Route path="/partners" element={<Partners />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
