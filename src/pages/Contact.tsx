@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState } from "react";
 import { z } from "zod";
@@ -32,12 +33,14 @@ const Contact: React.FC = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
+    // In a real application, this would validate credentials with your backend
     console.log(values);
     toast({
       title: "تم تسجيل الدخول بنجاح",
       description: "جاري تحويلك إلى نظام إدارة المباني...",
     });
     
+    // Simulate loading time before opening the portal dialog
     setTimeout(() => {
       setIsDialogOpen(true);
     }, 1000);
@@ -47,22 +50,6 @@ const Contact: React.FC = () => {
     <div className="min-h-screen bg-space-dark py-20 px-4">
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto">
-          <div className="flex flex-col items-center justify-center mb-12 animate-fade-in">
-            <div className="w-40 h-40 mb-6 relative group">
-              <div className="absolute inset-0 bg-highlight-turquoise/20 rounded-full animate-pulse group-hover:animate-none transition-all duration-300"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Building 
-                  className="w-24 h-24 text-highlight-turquoise transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" 
-                  strokeWidth={1.5} 
-                />
-              </div>
-            </div>
-            <h2 className="text-3xl font-cairo font-bold text-highlight-turquoise mb-2 tracking-wider">
-              Space Gate
-            </h2>
-            <div className="h-0.5 w-32 bg-gradient-to-r from-highlight-turquoise/0 via-highlight-turquoise to-highlight-turquoise/0 animate-pulse"></div>
-          </div>
-
           <div className="text-center mb-10">
             <h1 className="text-3xl sm:text-4xl font-cairo font-bold text-white mb-4">
               بوابة الدخول لنظام إدارة المباني
@@ -150,6 +137,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
+      {/* BMS Portal Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-auto bg-space-dark border-highlight-turquoise">
           <DialogHeader>
@@ -164,7 +152,7 @@ const Contact: React.FC = () => {
               <h3 className="text-lg font-cairo font-bold text-white mb-2">معلومات المبنى</h3>
               <p className="text-gray-300">مجمع رويال سيتي - المنصور</p>
               <p className="text-gray-300">رقم المبنى: RC-2023</p>
-              <p className="text-gray-300">المساح��: 12,500 م²</p>
+              <p className="text-gray-300">المساحة: 12,500 م²</p>
             </div>
             <div className="bg-space-darker p-4 rounded-lg border border-highlight-pink/20">
               <h3 className="text-lg font-cairo font-bold text-white mb-2">إحصائيات الطاقة</h3>
